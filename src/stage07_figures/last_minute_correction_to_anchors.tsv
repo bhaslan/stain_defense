@@ -1,0 +1,24 @@
+# A deliberate late patch, leave the pipeline alone.
+#
+# The ten lab-tested anchors reach Table S4 through addendum.csv, whose taxid column is blank for
+# every one of them and whose kingdom column reads Bacteria for every one of them, MetN included.
+# MetN is an archaeon, and its assembly is a metagenome-assembled genome that sits in neither
+# assembly summary the pipeline reads, so nothing upstream can supply these values.
+#
+# These were read from NCBI by hand (esummary on each assembly, efetch on each taxid) on
+# 2026-11-08 and are recorded here so that Table S4 can be correct without rerunning Stage 01.
+# homolog_table.py overlays them on these ten rows and on nothing else.
+#
+# Do not propagate this file upstream, and do not treat it as a bug in addendum.csv to be fixed.
+# It patches one table, on purpose, late.
+protein_accession	organism	taxonomy_id	domain	phylum
+WP_000554504.1	Staphylococcus epidermidis	1282	Bacteria	Bacillota
+WP_006860708.1	Marvinbryantia formatexigens DSM 14469	478749	Bacteria	Bacillota
+WP_023612761.1	Streptococcus pyogenes	1314	Bacteria	Bacillota
+WP_070704620.1	Staphylococcus condimenti	70255	Bacteria	Bacillota
+WP_074518199.1	Escherichia coli	562	Bacteria	Pseudomonadota
+WP_077836245.1	Clostridium felsineum	36839	Bacteria	Bacillota
+WP_085236859.1	Staphylococcus lutrae	155085	Bacteria	Bacillota
+WP_265486636.1	Lactobacillus sp. PV012	2594494	Bacteria	Bacillota
+WP_319539463.1	uncultured Methanospirillum sp.	262503	Archaea	Methanobacteriota
+WP_328984724.1	Pseudomonas aeruginosa	287	Bacteria	Pseudomonadota
