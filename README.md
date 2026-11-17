@@ -1,4 +1,4 @@
-# Druid
+# stain_defense
 
 Code for the article submission "Genomic DNA repeats act as an antitoxin for a widespread Schlafen immune effector"
 
